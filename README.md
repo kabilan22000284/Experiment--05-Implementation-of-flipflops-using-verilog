@@ -123,6 +123,7 @@ nand(Y, R, clock);
 nand(Q, X, Qbar);
 nand(Qbar, Y, Q);
 endmodule
+```
 
 D Flip-flop
 ```
@@ -136,7 +137,7 @@ nand(Y, Dbar, clock);
 nand(Q, X, Qbar);
 nand(Qbar, Y, Q);
 endmodule
-
+```
 JK Flip-flop
 ```
 module jk_flipflop(J, K, clock, Q, Qbar);
@@ -148,7 +149,7 @@ nand(S, K, clock, Q);
 nand(Q, P, Qbar);
 nand(Qbar, S, Q);
 endmodule
-
+```
 T Flip-flop
 ```
 module t_flipflop(T, clock, Q, Qbar);
@@ -160,7 +161,7 @@ nand(B, T, clock, Q);
 nand(Q, A, Qbar);
 nand(Qbar, B, Q);
 endmodule
-
+```
 
 
 
