@@ -222,3 +222,4 @@ T FLIPFLOP
 
 
 ### RESULTS 
+thus implementation of flipflops using verilog is verified
