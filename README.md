@@ -109,9 +109,57 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: kabilan v
+RegisterNumber: 22000284 
+
+SR Flip-flop
+```
+module sr_flipflop(S, R, clock, Q, Qbar);
+input S, R, clock;
+output Q, Qbar;
+wire X, Y;
+nand(X, S, clock);
+nand(Y, R, clock);
+nand(Q, X, Qbar);
+nand(Qbar, Y, Q);
+endmodule
+
+D Flip-flop
+```
+module d_flipflop(D, clock, Q, Qbar);
+input D, clock;
+output Q, Qbar;
+assign Dbar = ~D;
+wire X, Y;
+nand(X, D, clock);
+nand(Y, Dbar, clock);
+nand(Q, X, Qbar);
+nand(Qbar, Y, Q);
+endmodule
+
+JK Flip-flop
+```
+module jk_flipflop(J, K, clock, Q, Qbar);
+input J, K, clock;
+output Q, Qbar;
+wire P, S;
+nand(P, J, clock, Qbar);
+nand(S, K, clock, Q);
+nand(Q, P, Qbar);
+nand(Qbar, S, Q);
+endmodule
+
+T Flip-flop
+```
+module t_flipflop(T, clock, Q, Qbar);
+input T, clock;
+output Q, Qbar;
+wire A, B;
+nand(A, T, clock, Qbar);
+nand(B, T, clock, Q);
+nand(Q, A, Qbar);
+nand(Qbar, B, Q);
+endmodule
 
 
 
@@ -119,6 +167,21 @@ RegisterNumber:
 
 
 ### RTL LOGIC FOR FLIPFLOPS 
+FOR SR FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214351556-8e3db941-b755-40cf-ab31-3bb114e7495a.png)
+
+FOR D FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214351782-2a0efe02-e90f-4f7c-918e-2def37ff7369.png)
+
+FOR JK FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214351878-61dcc620-1851-45fc-9097-fd248afa62f8.png)
+
+FOR T FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214351981-74c8951c-d776-4dd9-b901-51f19ebf73d9.png)
 
 
 
@@ -128,7 +191,27 @@ RegisterNumber:
 
 
 
-### TIMING DIGRAMS FOR FLIP FLOPS 
+
+
+
+### TIMING DIGRAMS FOR FLIP FLOPS
+
+SR FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214352166-fdc2dc83-28a8-467a-a7f4-ebb54689aa4f.png)
+
+D FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214352257-133f9723-41af-4c0c-9804-b13cac64f38f.png)
+
+JK FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214352349-fca21ef5-0330-4787-934b-3ef2efba95b7.png)
+
+T FLIPFLOP
+
+![image](https://user-images.githubusercontent.com/123469171/214352463-b1a23d8e-e6d5-44e9-8533-822055cf0257.png)
+
 
 
 
